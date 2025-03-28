@@ -1,0 +1,14 @@
+Using GitHub Web Interface:
+Alternatively, if you prefer the GitHub web interface:
+
+Go to your repository: Open the devops-study repository on GitHub.
+
+Create a new file: Click the "Add file" button and select "Create new file".
+
+Enter the folder name: To create a folder, type the folder name followed by a slash, like this: linux-commands/README.md.
+
+Add content: You can add any content inside the README.md file (or any other file you want to create).
+
+Commit the new file: Scroll down, add a commit message, and click "Commit new file".
+
+This will create the linux-commands folder in your repository on GitHub.
