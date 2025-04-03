@@ -1,0 +1,55 @@
+RENAME_MAKE FILE PRIVATE_DELETE_LESS/HEAD/MORE
+
+[root@ip-172-31-14-37 ec2-user]# mv diry mydir
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirx  file1  file10  file3  mydir
+[root@ip-172-31-14-37 ec2-user]# mv file1 .file1
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirx  file10  file3  mydir
+[root@ip-172-31-14-37 ec2-user]# ls -a
+.   .bash_logout   .bashrc  .dira  .dirz   file10  .file4  .ssh
+..  .bash_profile  dir1     dirx   .file1  file3   mydir
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirx  file10  file3  mydir
+[root@ip-172-31-14-37 ec2-user]# rm -rf dirx
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  file10  file3  mydir
+[root@ip-172-31-14-37 ec2-user]# cat >>file10
+bash: file10: Is a directory
+[root@ip-172-31-14-37 ec2-user]#
+[root@ip-172-31-14-37 ec2-user]# cat >>file3
+Namaste
+Hello
+[root@ip-172-31-14-37 ec2-user]# rm -rf file3
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  file10  mydir
+[root@ip-172-31-14-37 ec2-user]# cat >>file9
+1
+2
+3
+4
+5
+
+6
+7
+[root@ip-172-31-14-37 ec2-user]# less file9
+[root@ip-172-31-14-37 ec2-user]# head file9
+1
+2
+3
+4
+5
+
+6
+7
+[root@ip-172-31-14-37 ec2-user]# more file9
+1
+2
+3
+4
+5
+
+6
+7
+[root@ip-172-31-14-37 ec2-user]# ^C
+[root@ip-172-31-14-37 ec2-user]#

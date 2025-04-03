@@ -1,0 +1,133 @@
+About Directory ---------------------------------
+
+login as: ec2-user
+Authenticating with public key "imported-openssh-key"
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2026-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+[ec2-user@ip-172-31-14-37 ~]$ clear
+[ec2-user@ip-172-31-14-37 ~]$ sudo su
+[root@ip-172-31-14-37 ec2-user]# touch file1 file2 file3
+[root@ip-172-31-14-37 ec2-user]# ls
+file1  file2  file3
+[root@ip-172-31-14-37 ec2-user]# mkdir dir1
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  file1  file2  file3
+[root@ip-172-31-14-37 ec2-user]# mkdir file10
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  file1  file10  file2  file3
+[root@ip-172-31-14-37 ec2-user]# ls -l
+total 0
+drwxr-xr-x 2 root root 6 Apr  3 03:34 dir1
+-rw-r--r-- 1 root root 0 Apr  3 03:34 file1
+drwxr-xr-x 2 root root 6 Apr  3 03:35 file10
+-rw-r--r-- 1 root root 0 Apr  3 03:34 file2
+-rw-r--r-- 1 root root 0 Apr  3 03:34 file3
+[root@ip-172-31-14-37 ec2-user]# touch .file4
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  file1  file10  file2  file3
+[root@ip-172-31-14-37 ec2-user]# ls-a
+bash: ls-a: command not found
+[root@ip-172-31-14-37 ec2-user]# ls -a
+.   .bash_logout   .bashrc  file1   file2  .file4
+..  .bash_profile  dir1     file10  file3  .ssh
+[root@ip-172-31-14-37 ec2-user]# mkdir .dira
+[root@ip-172-31-14-37 ec2-user]# ls -a
+.   .bash_logout   .bashrc  .dira  file10  file3   .ssh
+..  .bash_profile  dir1     file1  file2   .file4
+[root@ip-172-31-14-37 ec2-user]# mkdir dirx diry .dirz
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirx  diry  file1  file10  file2  file3
+[root@ip-172-31-14-37 ec2-user]# ls -a
+.   .bash_logout   .bashrc  .dira  diry   file1   file2  .file4
+..  .bash_profile  dir1     dirx   .dirz  file10  file3  .ssh
+[root@ip-172-31-14-37 ec2-user]# ls -l
+total 0
+drwxr-xr-x 2 root root 6 Apr  3 03:34 dir1
+drwxr-xr-x 2 root root 6 Apr  3 03:39 dirx
+drwxr-xr-x 2 root root 6 Apr  3 03:39 diry
+-rw-r--r-- 1 root root 0 Apr  3 03:34 file1
+drwxr-xr-x 2 root root 6 Apr  3 03:35 file10
+-rw-r--r-- 1 root root 0 Apr  3 03:34 file2
+-rw-r--r-- 1 root root 0 Apr  3 03:34 file3
+[root@ip-172-31-14-37 ec2-user]# ls -la
+total 12
+drwx------ 9 ec2-user ec2-user 203 Apr  3 03:39 .
+drwxr-xr-x 3 root     root      22 Apr  3 03:31 ..
+-rw-r--r-- 1 ec2-user ec2-user  18 Jul 15  2020 .bash_logout
+-rw-r--r-- 1 ec2-user ec2-user 193 Jul 15  2020 .bash_profile
+-rw-r--r-- 1 ec2-user ec2-user 231 Jul 15  2020 .bashrc
+drwxr-xr-x 2 root     root       6 Apr  3 03:34 dir1
+drwxr-xr-x 2 root     root       6 Apr  3 03:39 .dira
+drwxr-xr-x 2 root     root       6 Apr  3 03:39 dirx
+drwxr-xr-x 2 root     root       6 Apr  3 03:39 diry
+drwxr-xr-x 2 root     root       6 Apr  3 03:39 .dirz
+-rw-r--r-- 1 root     root       0 Apr  3 03:34 file1
+drwxr-xr-x 2 root     root       6 Apr  3 03:35 file10
+-rw-r--r-- 1 root     root       0 Apr  3 03:34 file2
+-rw-r--r-- 1 root     root       0 Apr  3 03:34 file3
+-rw-r--r-- 1 root     root       0 Apr  3 03:38 .file4
+drwx------ 2 ec2-user ec2-user  29 Apr  3 03:31 .ssh
+[root@ip-172-31-14-37 ec2-user]# mkdir -p dirc/dird/dire
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirc  dirx  diry  file1  file10  file2  file3
+[root@ip-172-31-14-37 ec2-user]# cd dirc
+[root@ip-172-31-14-37 dirc]# ls
+dird
+[root@ip-172-31-14-37 dirc]# pwd
+/home/ec2-user/dirc
+[root@ip-172-31-14-37 dirc]# cd dird
+[root@ip-172-31-14-37 dird]# ls
+dire
+[root@ip-172-31-14-37 dird]# ls -a
+.  ..  dire
+[root@ip-172-31-14-37 dird]# ls -la
+total 0
+drwxr-xr-x 3 root root 18 Apr  3 03:42 .
+drwxr-xr-x 3 root root 18 Apr  3 03:42 ..
+drwxr-xr-x 2 root root  6 Apr  3 03:42 dire
+[root@ip-172-31-14-37 dird]# cd dire
+[root@ip-172-31-14-37 dire]# ls
+[root@ip-172-31-14-37 dire]# ls -la
+total 0
+drwxr-xr-x 2 root root  6 Apr  3 03:42 .
+drwxr-xr-x 3 root root 18 Apr  3 03:42 ..
+[root@ip-172-31-14-37 dire]# cd .
+[root@ip-172-31-14-37 dire]# cd ..
+[root@ip-172-31-14-37 dird]# cd ..
+[root@ip-172-31-14-37 dirc]# cd dire
+bash: cd: dire: No such file or directory
+[root@ip-172-31-14-37 dirc]# cd dird
+[root@ip-172-31-14-37 dird]# cd dire
+[root@ip-172-31-14-37 dire]# pwd
+/home/ec2-user/dirc/dird/dire
+[root@ip-172-31-14-37 dire]# cd ^C
+[root@ip-172-31-14-37 dire]# cd /home/ec2-user/dirc/dird/dire
+[root@ip-172-31-14-37 dire]# pwd
+/home/ec2-user/dirc/dird/dire
+[root@ip-172-31-14-37 dire]# cd ../../..
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirc  dirx  diry  file1  file10  file2  file3
+[root@ip-172-31-14-37 ec2-user]# cd ..
+[root@ip-172-31-14-37 home]# cd ..
+[root@ip-172-31-14-37 /]# ls
+bin   dev  home  lib64  media  opt   root  sbin  sys  usr
+boot  etc  lib   local  mnt    proc  run   srv   tmp  var
+[root@ip-172-31-14-37 /]# ls -a
+.   .autorelabel  boot  etc   lib    local  mnt  proc  run   srv  tmp  var
+..  bin           dev   home  lib64  media  opt  root  sbin  sys  usr
+[root@ip-172-31-14-37 /]# cd ec2-user
+bash: cd: ec2-user: No such file or directory
+[root@ip-172-31-14-37 /]# cd home
+[root@ip-172-31-14-37 home]# cd ec2-user
+[root@ip-172-31-14-37 ec2-user]# ls
+dir1  dirc  dirx  diry  file1  file10  file2  file3
+[root@ip-172-31-14-37 ec2-user]#
