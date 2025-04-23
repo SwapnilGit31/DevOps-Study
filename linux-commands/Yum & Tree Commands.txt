@@ -1,0 +1,66 @@
+Yum & Tree Commands
+===============================================
+
+
+[root@ip-172-31-33-159 ec2-user]# touch file1 file2 file3 file4
+[root@ip-172-31-33-159 ec2-user]# ls
+file1  file2  file3  file4
+[root@ip-172-31-33-159 ec2-user]# mkdir dira dirb dirc
+[root@ip-172-31-33-159 ec2-user]# ls
+dira  dirb  dirc  file1  file2  file3  file4
+[root@ip-172-31-33-159 ec2-user]# yum update -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                             | 3.6 kB     00:00
+No packages marked for update
+[root@ip-172-31-33-159 ec2-user]# mkdir -p dir1/dir2/dir3
+[root@ip-172-31-33-159 ec2-user]# ls
+dir1  dira  dirb  dirc  file1  file2  file3  file4
+[root@ip-172-31-33-159 ec2-user]# yum install tree -y
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Resolving Dependencies
+--> Running transaction check
+---> Package tree.x86_64 0:1.6.0-10.amzn2.0.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+==============================================================================
+ Package     Arch          Version                    Repository         Size
+==============================================================================
+Installing:
+ tree        x86_64        1.6.0-10.amzn2.0.1         amzn2-core         47 k
+
+Transaction Summary
+==============================================================================
+Install  1 Package
+
+Total download size: 47 k
+Installed size: 83 k
+Downloading packages:
+tree-1.6.0-10.amzn2.0.1.x86_64.rpm                       |  47 kB   00:00
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : tree-1.6.0-10.amzn2.0.1.x86_64                             1/1
+  Verifying  : tree-1.6.0-10.amzn2.0.1.x86_64                             1/1
+
+Installed:
+  tree.x86_64 0:1.6.0-10.amzn2.0.1
+
+Complete!
+[root@ip-172-31-33-159 ec2-user]# tree
+.
+├── dir1
+│   └── dir2
+│       └── dir3
+├── dira
+├── dirb
+├── dirc
+├── file1
+├── file2
+├── file3
+└── file4
+
+6 directories, 4 files
+[root@ip-172-31-33-159 ec2-user]#
